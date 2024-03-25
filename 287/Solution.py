@@ -12,7 +12,7 @@ class Solution:
                 break
         
         # floyd cycle detection algorithm to get start of loop
-        slow = nums[0];
+        slow = nums[0]
         while slow != fast:
             slow = nums[slow]
             fast = nums[fast]
