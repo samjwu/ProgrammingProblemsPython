@@ -1,25 +1,23 @@
 class Solution:
     def countSubarrays(self, nums: List[int], k: int) -> int:
-        hi = max(nums)
-
         n = len(nums)
 
         ans = 0
-        
+        hi = max(nums)
+        hi_count = 0
         left = 0
-        
-        hiCount = 0
 
         for right in range(n):
             if nums[right] == hi:
-                hiCount += 1
+                hi_count += 1
 
-            while hiCount == k:
+            while hi_count == k:
                 if nums[left] == hi:
-                    hiCount -= 1
+                    hi_count -= 1
                 left += 1
 
             # for window ending at right
             # there are left + 1 starting positions (from 0)
             ans += left
+
         return ans
