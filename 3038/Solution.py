@@ -1,6 +1,10 @@
 class Solution:
     def maxOperations(self, nums: List[int]) -> int:
         n = len(nums)
+
+        if n < 2:
+            return 0
+
         i = 0
         score = nums[i] + nums[i+1]
         ans = 0
