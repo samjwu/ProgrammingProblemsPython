@@ -4,8 +4,8 @@ class Solution:
         
         n = len(words)
         
-        for i in range(n):
-            if x in words[i]:
+        for i, word in enumerate(words):
+            if x in word:
                 ans.append(i)
                 
         return ans
