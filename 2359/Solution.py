@@ -3,7 +3,7 @@ from typing import List
 class Solution:
     def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:
         n = len(edges)
-        ans = -1
+        closest_node = -1
         min_dist = float('inf')
 
         dists1 = [-1] * n
@@ -16,9 +16,9 @@ class Solution:
             # check reachable nodes with minimal distance
             if min(dists1[i], dists2[i]) >= 0 and max(dists1[i], dists2[i]) < min_dist:
                 min_dist = max(dists1[i], dists2[i])
-                ans = i
+                closest_node = i
 
-        return ans
+        return closest_node
 
     def compute_dists(self, node: int, curr_dist: int, edges: List[int], dists: List[int]) -> None:
         # traverse non-terminal and unvisited nodes
