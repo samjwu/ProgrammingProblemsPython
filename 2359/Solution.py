@@ -2,6 +2,11 @@ from typing import List
 
 class Solution:
     def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:
+        """
+        Find a node that can be reached from node1 and node2
+        And is also closest to both of them,
+        such that the max distance from either one is minimized
+        """
         n = len(edges)
         closest_node = -1
         min_dist = float('inf')
@@ -21,7 +26,10 @@ class Solution:
         return closest_node
 
     def compute_dists(self, node: int, curr_dist: int, edges: List[int], dists: List[int]) -> None:
-        # traverse non-terminal and unvisited nodes
+        """
+        Traverse non-terminal and unvisited nodes
+        Compute their distance from the parent
+        """
         while node != -1 and dists[node] == -1:
             dists[node] = curr_dist
             curr_dist += 1
