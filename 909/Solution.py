@@ -24,9 +24,10 @@ class Solution:
             else:
                 return n-1-r, n-1-c
             
-        seen = set()
         queue = collections.deque()
         queue.append((1, 0))
+        seen = set()
+        seen.add(1)
 
         while queue:
             square, moves = queue.popleft()
