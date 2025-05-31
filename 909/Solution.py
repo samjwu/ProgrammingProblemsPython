@@ -1,8 +1,11 @@
+from collections import deque
+from typing import List, Tuple
+
 class Solution:
     def snakesAndLadders(self, board: List[List[int]]) -> int:
         n = len(board)
 
-        def square_to_board(square: int) -> (int, int):
+        def square_to_board(square: int) -> Tuple[int, int]:
             """
             Convert square position to board position
             (square number to row and column)
@@ -24,7 +27,7 @@ class Solution:
             else:
                 return n-1-r, n-1-c
             
-        queue = collections.deque()
+        queue = deque()
         queue.append((1, 0))
         seen = set()
         seen.add(1)
