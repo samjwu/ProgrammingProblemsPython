@@ -1,6 +1,6 @@
 class Solution:
     def distributeCandies(self, n: int, limit: int) -> int:
-        ans = 0
+        ways_to_distribute = 0
 
         # try all possible distributions for 1st child
         for first in range(min(limit, n) + 1):
@@ -16,6 +16,6 @@ class Solution:
 
             # the range is the number of distributions for 2nd/3rd child
             # given fixed distribution for 1st child each iteration
-            ans += upper - lower + 1
+            ways_to_distribute += upper - lower + 1
 
-        return ans
+        return ways_to_distribute
