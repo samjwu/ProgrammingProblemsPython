@@ -3,9 +3,9 @@ class Solution:
         ways_to_distribute = 0
 
         # try all possible distributions for 1st child
-        for first in range(min(limit, n) + 1):
+        for first_child in range(min(limit, n) + 1):
             # invalid distribution
-            remaining = n - first
+            remaining = n - first_child
             if remaining > limit * 2:
                 continue
 
