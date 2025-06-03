@@ -1,4 +1,5 @@
 import collections
+from typing import List
 
 class Solution:
     def maxCandies(
@@ -21,7 +22,7 @@ class Solution:
         opened_box = [False] * n
 
         q = collections.deque()
-        ans = 0
+        received_candies = 0
 
         # open first boxes
         for box in initialBoxes:
@@ -31,7 +32,7 @@ class Solution:
             if has_key[box]:
                 q.append(box)
                 opened_box[box] = True
-                ans += candies[box]
+                received_candies += candies[box]
 
         while len(q) > 0:
             curr_box = q.popleft()
@@ -44,7 +45,7 @@ class Solution:
                 if not opened_box[key] and has_box[key]:
                     q.append(key)
                     opened_box[key] = True
-                    ans += candies[key]
+                    received_candies += candies[key]
 
             # check boxes in current box
             for box in containedBoxes[curr_box]:
@@ -54,6 +55,6 @@ class Solution:
                 if not opened_box[box] and has_key[box]:
                     q.append(box)
                     opened_box[box] = True
-                    ans += candies[box]
+                    received_candies += candies[box]
 
-        return ans
+        return received_candies
