@@ -2,7 +2,7 @@ class Solution:
     def smallestEquivalentString(self, s1: str, s2: str, baseStr: str) -> str:
         union_find = {}
 
-        def find(x: int) -> int:
+        def find(x: str) -> str:
             union_find.setdefault(x, x)
 
             if x != union_find[x]:
@@ -10,7 +10,7 @@ class Solution:
 
             return union_find[x]
         
-        def unify(x: int, y: int) -> None:
+        def unify(x: str, y: str) -> None:
             parent_x = find(x)
             parent_y = find(y)
 
