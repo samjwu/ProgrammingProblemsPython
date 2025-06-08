@@ -1,8 +1,5 @@
 class Solution:
     def minimumBoxes(self, apple: List[int], capacity: List[int]) -> int:
-        n = len(apple)
-        m = len(capacity)
-
         need = sum(apple)
         capacity.sort(reverse=True)
         idx = 0
