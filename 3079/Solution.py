@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def sumOfEncryptedInt(self, nums: List[int]) -> int:
         def encrypt(x: str) -> int:
