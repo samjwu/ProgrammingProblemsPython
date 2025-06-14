@@ -1,8 +1,10 @@
+import sys
+
 class Solution:
     def minMaxDifference(self, num: int) -> int:
         s = str(num)
-        min_val = float('inf')
-        max_val = float('-inf')
+        min_val = sys.maxsize
+        max_val = -sys.maxsize - 1
 
         for from_digit in '0123456789':
             for to_digit in '0123456789':
