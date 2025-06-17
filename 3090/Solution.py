@@ -10,7 +10,7 @@ class Solution:
             char_index = ord(s[r]) - ord('a')
             freq[char_index] += 1
 
-            while l < n and freq[char_index] > 2:
+            while freq[char_index] > 2:
                 old_char_index = ord(s[l]) - ord('a')
                 freq[old_char_index] -= 1
                 l += 1
