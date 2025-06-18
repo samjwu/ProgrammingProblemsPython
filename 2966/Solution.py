@@ -1,7 +1,7 @@
 class Solution:
     def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
         n = len(nums)
-        arrays = []
+        triplets = []
 
         # greedily take smallest triplets
         nums.sort()
@@ -11,6 +11,6 @@ class Solution:
             if nums[i+2] - nums[i] > k:
                 return []
 
-            arrays.append([nums[i], nums[i + 1], nums[i + 2]])
+            triplets.append([nums[i], nums[i + 1], nums[i + 2]])
 
-        return arrays
+        return triplets
