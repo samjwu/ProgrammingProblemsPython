@@ -7,7 +7,7 @@ class Solution:
         for c in word:
             freq[c] += 1
 
-        removed_char_count = len(word)
+        min_removed = len(word)
 
         for base_count in freq.values():
             removed = 0
@@ -22,6 +22,6 @@ class Solution:
                     # to match base char plus k
                     removed += compare_count - (base_count + k)
 
-            removed_char_count = min(removed_char_count, removed)
+            min_removed = min(min_removed, removed)
 
-        return removed_char_count
+        return min_removed
