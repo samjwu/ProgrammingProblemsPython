@@ -1,5 +1,8 @@
 class Solution:
     def sumOfTheDigitsOfHarshadNumber(self, x: int) -> int:
+        if x <= 0:
+            return -1
+            
         digit_sum = 0
         tmp = x
 
