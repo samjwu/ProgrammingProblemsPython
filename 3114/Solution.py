@@ -8,7 +8,7 @@ class Solution:
                 right = str(j).zfill(2)
                 t = left + ":" + right
 
-                if all(s[i] == t[i] or s[i] == '?' for i in range(5)):
+                if all(s[k] == t[k] or s[k] == '?' for k in range(5)):
                     latest_time = t
 
         return latest_time                       
