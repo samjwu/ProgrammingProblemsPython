@@ -10,8 +10,8 @@ class Solution:
 
         lucky = -1
 
-        for num in freq:
-            if num == freq[num]:
+        for num, count in freq.items():
+            if num == count:
                 lucky = max(lucky, num)
 
         return lucky
