@@ -16,9 +16,7 @@ class FindSumPairs:
     def count(self, tot: int) -> int:
         pairs = 0
         for num in self.nums1:
-            remain = tot - num
-            if remain in self.freq:
-                pairs += self.freq[remain]
+            pairs += self.freq.get(tot - num, 0)
         return pairs
 
 
