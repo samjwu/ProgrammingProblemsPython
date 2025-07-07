@@ -6,15 +6,7 @@ class Solution:
             return False
 
         vowels = "aeiouAEIOU"
-        has_vowel = False
-        has_consonant = False
-
-        for c in word:
-            if c.isdigit():
-                continue
-            elif c in vowels:
-                has_vowel = True
-            else:
-                has_consonant = True
+        has_vowel = any(c in vowels for c in word if not c.isdigit())
+        has_consonant = any(c.isalpha() and c not in vowels for c in word if not c.isdigit())
 
         return has_vowel and has_consonant
