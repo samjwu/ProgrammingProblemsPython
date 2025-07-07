@@ -2,10 +2,7 @@ class Solution:
     def isValid(self, word: str) -> bool:
         n = len(word)
         
-        min_length = n >= 3
-        has_valid_chars = word.isalnum()
-
-        if not min_length or not has_valid_chars:
+        if not n >= 3 or not word.isalnum():
             return False
 
         vowels = "aeiouAEIOU"
