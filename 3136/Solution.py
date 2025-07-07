@@ -1,8 +1,6 @@
 class Solution:
     def isValid(self, word: str) -> bool:
-        n = len(word)
-        
-        if not n >= 3 or not word.isalnum():
+        if not len(word) >= 3 or not word.isalnum():
             return False
 
         vowels = "aeiouAEIOU"
