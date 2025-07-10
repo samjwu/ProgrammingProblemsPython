@@ -3,13 +3,10 @@ from typing import List
 
 class Solution:
     def duplicateNumbersXOR(self, nums: List[int]) -> int:
-        freq = {}
-
+        freq = defaultdict(int)
+        
         for num in nums:
-            if num in freq:
-                freq[num] += 1
-            else:
-                freq[num] = 1
+            freq[num] += 1
 
         dupe_xor = 0
 
