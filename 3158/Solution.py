@@ -1,3 +1,6 @@
+from collections import defaultdict
+from typing import List
+
 class Solution:
     def duplicateNumbersXOR(self, nums: List[int]) -> int:
         freq = {}
