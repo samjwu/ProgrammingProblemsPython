@@ -7,11 +7,11 @@ from typing import Optional
 #         self.next = next
 class Solution:
     def getDecimalValue(self, head: Optional[ListNode]) -> int:
-        decimal = 0
+        value = 0
 
         while head:
-            decimal *= 2
-            decimal += head.val
+            value *= 2
+            value += head.val
             head = head.next
 
-        return decimal
+        return value
