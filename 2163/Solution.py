@@ -30,7 +30,7 @@ class Solution:
         # store the maximum possible sum of the right
         right_part = sum(nums[n*2:])
 
-        # use max heap to keep biggest n elements
+        # use min heap to keep biggest n elements
         min_heap = nums[n*2:]
         heapq.heapify(min_heap)
         
