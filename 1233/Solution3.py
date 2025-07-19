@@ -19,6 +19,6 @@ class Solution:
             prev_parent += "/"
 
             if not paths[i].startswith(prev_parent):
-               top_folders.append(paths[i])
+                top_folders.append(paths[i])
         
         return top_folders
