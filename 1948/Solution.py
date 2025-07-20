@@ -1,6 +1,7 @@
 from collections import Counter
 from typing import List
 
+
 class Trie:
     """
     Represent all paths as a trie
@@ -45,18 +46,18 @@ class Solution:
             if not node.children:
                 return
 
-            subfolders = []
+            serialized_subfolders = []
             
             for subfolder, child in node.children.items():
                 serialize(child)
-                subfolders.append(subfolder + "(" + child.serialized + ")")
+                serialized_subfolders.append(subfolder + "(" + child.serialized + ")")
 
             # example input: [["a", "x"], ["a", "z"], ["b", "z"], ["b", "x"]]
             # if not sorted, would result in duplicates not being deleted since
             # a.serialized = x()z()
             # b.serialized = z()x()
-            subfolders.sort()
-            node.serialized = "".join(subfolders)
+            serialized_subfolders.sort()
+            node.serialized = "".join(serialized_subfolders)
             freq[node.serialized] += 1
 
         serialize(root)
