@@ -66,7 +66,7 @@ class Solution:
         # create temporary variable to record paths
         temp_path = []
 
-        def exclude_duplicates(node: Trie) -> None:
+        def collect_nonduplicates(node: Trie) -> None:
             """
             Find all non duplicate paths
 
@@ -80,10 +80,10 @@ class Solution:
 
             for subfolder, child in node.children.items():
                 temp_path.append(subfolder)
-                exclude_duplicates(child)
+                collect_nonduplicates(child)
                 # backtrack to simulate traversing paths
                 temp_path.pop()
 
-        exclude_duplicates(root)
+        collect_nonduplicates(root)
 
         return nonduplicate_folders
