@@ -1,7 +1,7 @@
 class Solution:
     def makeFancyString(self, s: str) -> str:
         n = len(s)
-        chars = [c for c in s]
+        chars = list(s)
         j = 2
 
         for i in range(2, n):
