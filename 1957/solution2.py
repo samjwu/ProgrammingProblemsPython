@@ -2,11 +2,11 @@ class Solution:
     def makeFancyString(self, s: str) -> str:
         n = len(s)
         chars = list(s)
-        j = 2
+        write_idx = 2
 
         for i in range(2, n):
-            if chars[i] != chars[j-1] or chars[i] != chars[j-2]:
-                chars[j] = chars[i]
-                j += 1
+            if chars[i] != chars[write_idx-1] or chars[i] != chars[write_idx-2]:
+                chars[write_idx] = chars[i]
+                write_idx += 1
 
-        return "".join(chars[0:j])
+        return "".join(chars[0:write_idx])
