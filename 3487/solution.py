@@ -3,6 +3,9 @@ from typing import List
 
 class Solution:
     def maxSum(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+            
         high = max(nums)
 
         if high <= 0:
