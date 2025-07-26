@@ -1,13 +1,13 @@
 class Solution:
     def numberOfChild(self, n: int, k: int) -> int:
-        n -= 1
+        max_idx = n - 1
 
-        trips = k // n
-        remaining_steps = k % n
+        trips = k // max_idx
+        remaining_steps = k % max_idx
 
         if trips % 2 == 0:
             # round trip
             return remaining_steps
         else:
             # return trip
-            return n - remaining_steps
+            return max_idx - remaining_steps
