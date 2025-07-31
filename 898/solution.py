@@ -11,7 +11,7 @@ class Solution:
 
         for new_num in arr:
             # generate all new OR values using the new number
-            # also OR new_num with itself to account for empty set case
+            # include new_num itself to account for new subarrays
             curr_ors = {new_num | prev_num for prev_num in curr_ors} | {new_num}
             # add new OR values
             unique_ors |= curr_ors
