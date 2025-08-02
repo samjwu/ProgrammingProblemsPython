@@ -22,7 +22,7 @@ class Solution:
 
             # number of swaps is half the number of fruits
             # add the price for each swap
-            swaps += [price] * abs(fruits // 2)
+            swaps.extend([price] * abs(fruits // 2))
         
         # use the cheapest fruit for swaps to minimize cost
         min_price = min(basket1 + basket2)
