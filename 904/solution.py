@@ -15,7 +15,7 @@ class Solution:
         
         while right < n:
             # extend window
-            if fruits[right] not in basket.keys():
+            if fruits[right] not in basket:
                 basket[fruits[right]] = 1
             else:
                 basket[fruits[right]] += 1
