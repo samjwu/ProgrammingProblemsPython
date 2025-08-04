@@ -15,11 +15,7 @@ class Solution:
         
         while right < n:
             # extend window
-            if fruits[right] not in basket:
-                basket[fruits[right]] = 1
-            else:
-                basket[fruits[right]] += 1
-            right += 1
+            basket[fruits[right]] = basket.get(fruits[right], 0) + 1
             
             # shrink window if too many fruit types
             while len(basket) > 2:
