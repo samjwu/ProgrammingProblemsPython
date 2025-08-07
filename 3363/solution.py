@@ -25,7 +25,10 @@ class Solution:
 
             for i in range(1, n-1):
                 # valid columns must be above the diagonal (\)
-                for j in range(max(n-1-i, i+1), n):
+                # and below the anti-diagonal (/)
+                # i=j for main diagonal, therefore make sure j > i+1
+                # i+j=n-1 for anti-diagonal, therefore make sure j > n-1-i
+                for j in range(max(i+1, n-1-i), n):
                     # try moving down
                     best = prev[j]
 
