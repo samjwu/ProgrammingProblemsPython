@@ -3,6 +3,9 @@ from math import ceil
 
 
 class Solution:
+    # if n = 5550, probability = 0.9999989925525751
+    SOUP_PROBABILITY_THRESHOLD = 5550
+
     # memo[i][j] = probability of using up soup A first
     # where i is number of servings left of soup A
     # and j is number of servings left of soup B
@@ -10,8 +13,7 @@ class Solution:
 
     def soupServings(self, n: int) -> float:
         # use magic number
-        # if n = 5550, probability = 0.9999989925525751
-        if n >= 5550:
+        if n >= SOUP_PROBABILITY_THRESHOLD:
             return 1
 
         def recurse(i: int, j: int) -> float:
