@@ -9,7 +9,7 @@ class Solution:
         nums.sort()
 
         for i in range(n // 2):
-            avg = float(nums[i] + nums[n-1-i]) / 2
+            avg = (nums[i] + nums[n-1-i]) / 2
             min_avg = min(min_avg, avg)
 
         return min_avg
