@@ -21,13 +21,14 @@ class Solution:
         # precompute the values to make query lookups O(1)
         # product_ranges[i][j] = product from index i to j
         product_ranges = [[0 for j in range(m)] for i in range(m)]
+        product_ranges = {}
         for i in range(m):
             curr_product = 1
             for j in range(i, m):
                 curr_product = curr_product * n_powers[j] % MOD
-                product_ranges[i][j] = curr_product
+                product_ranges[(i, j)] = curr_product
 
         query_products = []
         for left, right in queries:
-            query_products.append(product_ranges[left][right])
+            query_products.append(product_ranges[(left, right)])
         return query_products
