@@ -12,7 +12,7 @@ class Solution:
         # find the powers of two that add up to n
         while n > 0:
             if n % 2 == 1:
-                n_powers.append(curr_power)        
+                n_powers.append(curr_power)
             n //= 2
             curr_power *= 2
 
