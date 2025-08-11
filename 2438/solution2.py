@@ -20,7 +20,6 @@ class Solution:
         m = len(n_powers)
         # precompute the values to make query lookups O(1)
         # product_ranges[i][j] = product from index i to j
-        product_ranges = [[0 for j in range(m)] for i in range(m)]
         product_ranges = {}
         for i in range(m):
             curr_product = 1
