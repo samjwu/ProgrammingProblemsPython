@@ -18,7 +18,7 @@ class Solution:
                 # include current unique int
                 include_unique = recurse(remaining, x, unique_int + 1)
                 # total ways is all ways both including and excluding unique int
-                return exclude_unique + include_unique
+                return (exclude_unique + include_unique) % MOD
             else:
                 # unique int ^ x is too high, no valid solution
                 return 0
