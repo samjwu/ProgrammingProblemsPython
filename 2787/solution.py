@@ -1,3 +1,6 @@
+from functools import cache
+
+
 class Solution:
     def numberOfWays(self, n: int, x: int) -> int:
         MOD = 10 ** 9 + 7
