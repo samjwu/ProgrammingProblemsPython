@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def maxNumber(self, nums1: List[int], nums2: List[int], k: int) -> List[int]:
-        def pick_max_subsequence(nums: int, k: int) -> List[int]:
+        def pick_max_subsequence(nums: List[int], k: int) -> List[int]:
             # construct a monotonic decreasing stack
             # final merged will have the lexicographically largest number
             stack = []
