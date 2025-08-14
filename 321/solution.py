@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List
 
 
@@ -23,15 +24,19 @@ class Solution:
         def merge(nums1: List[int], nums2: List[int]) -> List[int]:
             # merge the two lists into one number
             merged = []
+
+            # use deque for efficient pops from left
+            nums1 = deque(nums1)
+            nums2 = deque(nums2)
             
             while nums1 or nums2:
                 # take whichever is larger
                 # or whichever remains
                 # for ties take the lexicographically bigger remainder
                 if nums1 > nums2:
-                    merged.append(nums1.pop(0))
+                    merged.append(nums1.popleft())
                 else:
-                    merged.append(nums2.pop(0))
+                    merged.append(nums2.popleft())
 
             return merged
 
