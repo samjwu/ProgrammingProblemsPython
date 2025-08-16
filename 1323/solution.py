@@ -1,5 +1,5 @@
 class Solution:
-    def maximum69Number (self, num: int) -> int:
+    def maximum69Number(self, num: int) -> int:
         digits = [digit for digit in str(num)]
         n = len(digits)
 
