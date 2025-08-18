@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def judgePoint24(self, cards: List[int]) -> bool:
         def _can_form_24(cards: List[int]) -> bool:
@@ -5,7 +8,7 @@ class Solution:
 
             # base case, only one card left
             # check if it is roughly 24
-            if n == 1: 
+            if n == 1:
                 return abs(cards[0] - 24) < 1e-5
 
             # try all distinct number pairs
@@ -31,7 +34,7 @@ class Solution:
                     for new_value in operations:
                         if _can_form_24(remaining_cards + [new_value]):
                             return True
-                            
+
             # could not find any combination of operations that make 24
             return False
 
