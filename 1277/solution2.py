@@ -14,7 +14,7 @@ class Solution:
             for j in range(n):
                 if matrix[i][j]:
                     # largest square at current position
-                    # is an extension of the smallest sqaure among 3 locations:
+                    # is an extension of the smallest square among 3 locations:
                     # top left, top, and the left
                     # plus one since the current position is one
                     memo[i+1][j+1] = min(memo[i][j], memo[i+1][j], memo[i][j+1]) + 1
