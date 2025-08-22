@@ -26,4 +26,4 @@ class Solution:
         height = max_row - min_row + 1
         width = max_col - min_col + 1
         
-        return height * width
+        return max(0, height * width)
