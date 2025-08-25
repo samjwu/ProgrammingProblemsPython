@@ -21,4 +21,5 @@ class Solution:
 
             return height
 
+        # try both cases: red as row 1 and blue as row 1
         return max(simulate_height(red, blue), simulate_height(blue, red))
