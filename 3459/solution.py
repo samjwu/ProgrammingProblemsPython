@@ -1,3 +1,4 @@
+from functools import cache 
 from typing import List
 
 
